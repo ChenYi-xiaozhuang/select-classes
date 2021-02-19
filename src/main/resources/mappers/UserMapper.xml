@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<!-- namespace:与当前xml文件对应的java接口文件，也就是指定当前的xml配置文件是哪个接口文件配置sql语句 -->
+<mapper namespace="cn.tedu.mybatis.mapper.UserMapper">
+<!-- 给findByName配置sql语句 -->
+<select id="findByName" resultType="cn.tedu.spring.entity.User">
+select * from user where name=#{name}
+</select>
+
+<!-- 给adduser配置sql语句 -->
+<insert id="addUser" parameterType="cn.tedu.spring.entity.User">
+insert into user (name,password,mail,phone,age) values (#{name},#{password},#{mail},#{phone},#{age})
+</insert>
+
+</mapper>
+
